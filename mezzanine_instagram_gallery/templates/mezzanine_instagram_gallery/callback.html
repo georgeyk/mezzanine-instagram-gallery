@@ -4,9 +4,10 @@
 <h2>Mezzanine Instagram Gallery</h2>
 <div>
     <h3>Successfull authorization!</h3>
-    <label>username:</label><p>{{ user.username }}</p>
-    <label>instagram_id</label><p>{{ user.instagram_id }}</p>
-    <label>access_token:</label><p>{{ user.access_token }}</p>
+    <p>Now you can run the management command get your images from instagram:</p>
+    <pre>
+        $ python manage.py sync_instagram_medias
+    </pre>
 </div>
 <p>Enjoy! =)</p>
 {% endblock %}

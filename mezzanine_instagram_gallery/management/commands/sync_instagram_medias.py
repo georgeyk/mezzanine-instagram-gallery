@@ -32,7 +32,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         gallery_slug = settings.INSTAGRAM_GALLERIES[0][0]
         gallery = Gallery.objects.get(slug=gallery_slug)
-        count = getattr(settings, 'INSTAGRAM_FETCH_COUNT', 20)
+        count = getattr(settings, 'INSTAGRAM_FETCH_COUNT', 50)
         for media in InstagramMedia.fetch_medias(count):
             media.save()
             media.to_mezzanine(gallery).save()
