@@ -1,2 +1,3 @@
-python-instagram==0.8.0
-requests==0.14.1
+Mezzanine>=1.2.4
+python-instagram>=0.8.0
+requests>=0.14.1
