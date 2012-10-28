@@ -2,12 +2,12 @@ mezzanine instagram gallery
 ===========================
 
 This is a django application to create a [mezzanine][0] gallery using the
-uploaded instagram images of a certain user.
+instagram images of a certain user.
 
 Here is an [example][1] of the gallery created with this application:
 
-You will need to setup a cron job (or alike) to get the pictures on a regular
-basis.
+You will need to setup a cron job (or alike) to get the pictures from time to
+time.
 
 
 Requirements
@@ -20,13 +20,17 @@ Requirements
 Installation
 ------------
 
+Run the following command:
+
+    $ pip install -e git+https://github.com/georgeyk/mezzanine-instagram-gallery.git#egg=mezzanine_instagram_gallery
+
 Add `mezzanine_instagram_gallery` in your `INSTALLED_APPS` after all the
 mezzanine applications. Then run migrate:
 
     $ python manage migrate mezzanine_instagram_gallery
 
 There is a management command that you can run on regular basis to update your
-pictures from instagram:
+pictures from instagram (you'll need to setup your access token first):
 
     $ python manage.py sync_instagram_medias
 
@@ -55,8 +59,8 @@ And configure the *urls.py*, here is an example:
     [...]
 
 Then run your project and access the configured url that calls *authorize*
-view. If everything is set correctly, you should see a page showing your
-access token.
+view. If everything is set correctly, you should see a page with a successful
+message.
 You might want to read the [python-instagram][2] documentation for further details
 on the authentication process.
 
